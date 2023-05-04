@@ -390,3 +390,110 @@ eines Betriebs in einer konsolidierten, einheitlichen Bildschirmdarstellung meis
 	\item \textbf{Operative CRM} bildet kundenzentrierte Geschäftsprozesse im Bereich Vertrieb, Marketing und Kundenservice ab
 	\item \textbf{Kommunikative CRM} deckt dann sämtliche Kanäle zur Kundenkommunikation
 \end{itemize}
+
+\section{KI-basierte Systeme}
+\textbf{Was ist Künstliche Intelligenz?}
+\begin{center}
+	\includegraphics[width=0.8\textwidth]{images/ki.png}
+\end{center}
+
+Ein \textbf{Agent} nimmt seine Umgebung durch Sensoren wahr und verändert sie durch Effektoren
+
+Ein \textbf{intelligenter Agent} is derjenige, der aufgrund seiner Beobachtungsfolge und seines Wissens über die Umgebung stets die optimale Aktion bzgl. eines Performanzmaß wählt
+\begin{itemize}
+	\item heißt \textbf{autonom}, der Agent eher aus seinen Beobachtungen lernt und nicht auf vorprogrammierte Aktionen angewiesen ist
+\end{itemize}
+
+\textbf{Key Concept: PEAS}:
+\begin{itemize}
+	\item \underline{P}erformance Measure: Einheit zur Definition des Erfolgs eines Agenten
+	\item \underline{E}nvironment: Umgebung eines Agenten
+	\item \underline{A}ctuaor: Teil des Agenten, der den Output der Handlung an die Umwelt abgibt
+	\item \underline{S}ensors: Rezeptive Teile eines Agenten, die den Input für den Agenten aufnehmen
+\end{itemize}
+
+\textbf{Supervised Learning}:
+\begin{itemize}
+	\item Lernen mit vorklassifizierten Trainingsdaten
+	\item \textbf{Ziel}: Lerne Funktion $x\rightarrow y$ um Klassifizierungen über ungesehene Daten zu treffen
+\end{itemize}
+
+\textbf{Unsupervised Learning}:
+\begin{itemize}
+	\item Erkennen von Mustern in unklassifizierten Daten
+	\item \textbf{Ziel}: Erlernen der verborgene Struktur der Daten
+\end{itemize}
+
+\textbf{ID3 Algorithmus}:
+\begin{itemize}
+	\item Gehört zur Familie von Entscheidungsbaum-Lernalgorithmen, die von der Annahme ausgehen, dass Daten in Kategorien unterteilt werden können
+	\item \textbf{Vorteile} von Algorithmen zum Lernen von Entscheidungsbäumen:
+	\begin{itemize}
+		\item Funktionieren mit kleinen Datensätzen
+		\item Schnell zu trainieren
+		\item Liefern Interpretierbare Ergebnisse
+	\end{itemize}
+	\item \textbf{Vorgehen}:
+	\begin{itemize}
+		\item Berechnet für jeden möglichen Split-Kandidaten ein statistisches Maß für den gegebenen Trainingsdatensatz
+		\item Wählt den Split-Kandidaten, der die Beispiele im Trainingsdatensatz am besten klassifiziert
+		\item Führt dies rekursiv mit den verbleibenden Split-Kandidaten durch, bis jedes Element des Trainingsdatensatzes eindeutig klassifiziert werden kann
+	\end{itemize}
+	
+	$\rightarrow$ Greedy Top-Down-Suche, der einen kompakten, aber nicht unbedingt besten Entscheidungsbaum findet
+\end{itemize}
+
+\textbf{Informationsgewinn} gibt an, wie gut ein bestimmtes Attribut $A$ eine Menge $S$ von Trainingsbeispielen gemäß der Zielklassifizierung trennt
+\begin{itemize}
+	\item ID3 wählt in jedem Schritt das Attribut aus, das den Informationsgewinn für den gegebenen Satz von Trainingsbeispielen maximiert
+	\item Informationsgewinn beschreibt die erwartete Verringerung der Entropie des gesamten Datensatzes durch die Aufteilung von $S$ nach dem Attribut $A$
+	$$\text{Informationsgewinn}(S,A)=\text{Entropie}(S)-\sum\limits_{v\in \text{values}(A)}\frac{|Sv|}{|S|}\cdot \text{Entropie}(Sv)$$
+\end{itemize}
+
+\textbf{Entropie im Kontext von Entscheidungsbaumlernen}: 
+\begin{itemize}
+	\item Beim Lernen von Entscheidungsbäumen wird Entropie verwendet, um die \textbf{Unreinheit} einer Menge $S$ von Trainingsbeispielen zu berechnen
+	\item Für eine binäre Klassifikation ($\oplus$ oder $\ominus$) definieren wir Entropie$(S)$ wie folgt: Sei $p_\oplus$ die relative Häufigkeit der positiven Beispiele in $S$ und $p_\ominus$ die relative Häufigkeit der negativen Beispiele in $S$:
+	$$\text{Entropie}(S)=-p_\oplus \log_2 p_\oplus -p_\ominus\log_2 p_\ominus$$
+	\item $S$ hat minimale Unreinheit mit Entropie $(S) = 0$ und maximale Unreinheit mit Entropie $(S) = 1$
+\end{itemize}
+
+\textbf{Informationssystem (MAT-System) mit KI Techniken}:
+\begin{center}
+	\includegraphics[width=0.5\textwidth]{images/mat-ki.png}
+\end{center}
+\begin{itemize}
+	\item Verschiebung bei der Aufgabendurchführung von Mensch (M) zur Technik (T) $\rightarrow$ \textbf{Automatisierung}
+	\item Menschen bei ihrer Aufgabendurchführung besser unterstützen $\rightarrow$ \textbf{Augmentation}
+\end{itemize}
+
+\textbf{Konversationsagenten} sind softwarebasierte Systeme, die für die Interaktion mit Nutzern unter Verwendung natürlicher Sprache konzipiert sind
+
+\textbf{Nutzeradaptive Systeme} nutzen Kontextinformation um Adaptation zu realisieren. Biosignale bieten reichhaltige Information über den Nutzerkontext
+
+\pagebreak
+\textbf{Potenziale und Risiken von KI}:
+\begin{center}
+	\includegraphics[width=0.8\textwidth]{images/ki-risc.png}
+\end{center}
+
+\textbf{Ethische Grundsätze und Anforderungen}:
+\begin{itemize}
+	\item 4 ethische Grundsätze:
+	\begin{enumerate}
+		\item Achtung der menschlichen Autonomie
+		\item Schadensverhütung
+		\item Fairness
+		\item Erklärbarkeit
+	\end{enumerate}
+	\item 7 Anforderungen:
+	\begin{enumerate}
+		\item Vorrang menschlichen Handelns und menschliche Aufsicht
+		\item technische Robustheit und Sicherheit
+		\item Schutz der Privatsphäre und Datenqualitätsmanagement
+		\item Transparenz
+		\item Vielfalt, Nichtdiskriminierung und Fairness
+		\item gesellschaftliches und ökologisches Wohlergehen sowie
+		\item Rechenschaftspflicht
+	\end{enumerate}
+\end{itemize}
